@@ -1,6 +1,6 @@
 {% set component_name = "plugin" %}
 {% set repo_name = "gz-" + component_name %}
-{% set version = "2_2.0.0" %}
+{% set version = "2_2.0.1" %}
 {% set version_package = version.split('_')[1] %}
 {% set major_version = version.split('_')[0] %}
 {% set name = repo_name + major_version %}
@@ -13,7 +13,7 @@ package:
 
 source:
   - url: https://github.com/gazebosim/{{ repo_name }}/archive/{{ repo_name }}{{ version }}.tar.gz
-    sha256: 4a80ceffcfa41c83f0c39678a84c67a873fcafee16026f7a96d58bb08b25641b
+    sha256: c5f1a9eb3addf7becf0597f18eadd124951febd14fe270fe250990f92e977c2c
 
 build:
   number: 0
@@ -70,7 +70,7 @@ about:
   home: https://github.com/gazebosim/{{ repo_name }}
   license: Apache-2.0
   license_file: LICENSE
-  summary: 'Cross-platform C++ library for dynamically loading plugins.'
+  summary: Cross-platform C++ library for dynamically loading plugins.
 
 extra:
   feedstock-name: {{ repo_name }}
