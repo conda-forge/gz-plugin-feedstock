@@ -81,8 +81,8 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gz--plugin2-green.svg)](https://anaconda.org/conda-forge/gz-plugin2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gz-plugin2.svg)](https://anaconda.org/conda-forge/gz-plugin2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gz-plugin2.svg)](https://anaconda.org/conda-forge/gz-plugin2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gz-plugin2.svg)](https://anaconda.org/conda-forge/gz-plugin2) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libgz--plugin2-green.svg)](https://anaconda.org/conda-forge/libgz-plugin2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libgz-plugin2.svg)](https://anaconda.org/conda-forge/libgz-plugin2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libgz-plugin2.svg)](https://anaconda.org/conda-forge/libgz-plugin2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libgz-plugin2.svg)](https://anaconda.org/conda-forge/libgz-plugin2) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gz--plugin3-green.svg)](https://anaconda.org/conda-forge/gz-plugin3) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gz-plugin3.svg)](https://anaconda.org/conda-forge/gz-plugin3) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gz-plugin3.svg)](https://anaconda.org/conda-forge/gz-plugin3) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gz-plugin3.svg)](https://anaconda.org/conda-forge/gz-plugin3) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libgz--plugin3-green.svg)](https://anaconda.org/conda-forge/libgz-plugin3) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libgz-plugin3.svg)](https://anaconda.org/conda-forge/libgz-plugin3) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libgz-plugin3.svg)](https://anaconda.org/conda-forge/libgz-plugin3) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libgz-plugin3.svg)](https://anaconda.org/conda-forge/libgz-plugin3) |
 
 Installing gz-plugin
 ====================
@@ -94,41 +94,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gz-plugin2, libgz-plugin2` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `gz-plugin3, libgz-plugin3` can be installed with `conda`:
 
 ```
-conda install gz-plugin2 libgz-plugin2
-```
-
-or with `mamba`:
-
-```
-mamba install gz-plugin2 libgz-plugin2
-```
-
-It is possible to list all of the versions of `gz-plugin2` available on your platform with `conda`:
-
-```
-conda search gz-plugin2 --channel conda-forge
+conda install gz-plugin3 libgz-plugin3
 ```
 
 or with `mamba`:
 
 ```
-mamba search gz-plugin2 --channel conda-forge
+mamba install gz-plugin3 libgz-plugin3
+```
+
+It is possible to list all of the versions of `gz-plugin3` available on your platform with `conda`:
+
+```
+conda search gz-plugin3 --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search gz-plugin3 --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search gz-plugin2 --channel conda-forge
+mamba repoquery search gz-plugin3 --channel conda-forge
 
-# List packages depending on `gz-plugin2`:
-mamba repoquery whoneeds gz-plugin2 --channel conda-forge
+# List packages depending on `gz-plugin3`:
+mamba repoquery whoneeds gz-plugin3 --channel conda-forge
 
-# List dependencies of `gz-plugin2`:
-mamba repoquery depends gz-plugin2 --channel conda-forge
+# List dependencies of `gz-plugin3`:
+mamba repoquery depends gz-plugin3 --channel conda-forge
 ```
 
 
