@@ -33,9 +33,9 @@ outputs:
         - cmake
         - pkg-config
       host:
-        - libgz-cmake3
+        - libgz-cmake4
         - libgz-tools2
-        - libgz-utils2
+        - libgz-utils3
         - dlfcn-win32  # [win]
     test:
       commands:
