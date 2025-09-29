@@ -3,19 +3,19 @@ schema_version: 1
 context:
   component_name: plugin
   repo_name: ${{ "gz-" + component_name }}
-  version: 3.1.0
-  major_version: "3"
-  name: ${{ repo_name + major_version }}
+  version: 4.0.0
+  major_version: "4"
+  name: ${{ repo_name }}
   component_version: ${{ component_name + major_version }}
   cxx_name: ${{ "lib" + name }}
 
 recipe:
-  name: ${{ name }}
+  name: gz-plugin-split
   version: ${{ version }}
 
 source:
   - url: https://github.com/gazebosim/${{ repo_name }}/archive/${{ repo_name }}${{ major_version }}_${{ version }}.tar.gz
-    sha256: d024780079572599ab467a7dbd33e2d861315403bf7d3d50b89a2610913ff04c
+    sha256: 97810f74a8dd3af867ccc3ba3a76853d81167606582dd4f0935284e9979a6209
 
 build:
   number: 0
@@ -38,9 +38,9 @@ outputs:
         - cmake
         - pkg-config
       host:
-        - libgz-cmake4
-        - libgz-tools2
-        - libgz-utils3
+        - libgz-cmake
+        - libgz-tools
+        - libgz-utils
         - if: win
           then:
             - dlfcn-win32
@@ -64,41 +64,7 @@ outputs:
               - if not exist %PREFIX%\\Library\\lib\\${{ name }}.lib exit 1
               - if not exist %PREFIX%\\Library\\bin\\${{ name }}.dll exit 1
               - if not exist %PREFIX%\\Library\\lib\\cmake\\${{ name }}\\${{ name }}-config.cmake exit 1
-
-  - package:
-      name: libgz-plugin
-    requirements:
-      run:
-        - ${{ pin_subpackage(cxx_name, exact=true) }}
-      run_exports:
-        - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
-        - ${{ pin_subpackage('libgz-plugin', upper_bound='x') }}
-    tests:
-      - script:
-          - cmake-package-check gz-plugin3
-        requirements:
-          run:
-            - cmake-package-check
-            - ${{ compiler('c') }}
-            - ${{ compiler('cxx') }}
-
-  - package:
-      name: gz-plugin
-    requirements:
-      run:
-        - ${{ pin_subpackage(name, exact=true) }}
-      run_exports:
-        - ${{ pin_subpackage(cxx_name, upper_bound='x') }}
-        - ${{ pin_subpackage('libgz-plugin', upper_bound='x') }}
-    tests:
-      - script:
-          - cmake-package-check gz-plugin3
-        requirements:
-          run:
-            - cmake-package-check
-            - ${{ compiler('c') }}
-            - ${{ compiler('cxx') }}
-
+  
   - package:
       name: ${{ name }}
     requirements:
